@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Practice</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+        <script type="text/javascript" src="Practice.js"></script>
+        <link rel="stylesheet" type="text/css" href="Practice.css"/>
+    </head>
+    <body>
+        <h1>Pediatric Nutrition Calculator</h1>
+        <form> 
+            <div id='growthdiv'>
+            Previous Weight (Kg): <input type="text" name="prevKg" id="prevKg"><br>
+            Current Weight (Kg): <input type="text" name="currKg" id="currKg"><br>
+            Days Between Weights (days): <input type="text" name="days" id="days"><br>
+                </div>
+            <div style='position:relative'>
+                <div id='dosekgdiv'>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+            Dosing Kilograms (Kg): <input type="text" name="doseKg" id="doseKg"><br>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+                <div id='restdiv' style='position:relative'>
+                    <div id='calsdiv' style='background-color:#ffffff'>
+                        <div id='calrecdiv'>
+            Breast Milk/ Formula #1 (mLs/day): <input type="text" name="#1mls" id="1mls">
+            Breast Milk/ Formula #1 (kcals/oz): <input type="text" name="#1kcals" id="1kcals"><br>
+            Breast Milk/ Formula #2 (mLs/day): <input type="text" name="#2mls" id="2mls">
+            Breast Milk/ Formula #2 (kcals/oz): <input type="text" name="#2kcals" id="2kcals"><br>
+            D5 (mLs/day): <input type="text" name="D5" id="D5"><br>
+                        </div>
+                        <br/>
+                        <div id='calgoaldiv'>Calorie Goal (kcals/Kg/day): <input type='text' name='calgoal' id="calgoal">
+                        </div>
+                    </div>
+                    <div id='fluiddiv' style='background-color:#99ffff'>
+                        <div id='insdiv'>
+                        Total Inputs (mLs/day): <input type="text" name="ins" id="ins"><br>
+                        </div>
+                        <br>
+                        <div id='fluidgoaldiv'>
+                        Fluid Goal (mLs/Kg/day): <input type="text" name="fluidgoal" id="fluidgoal"><br>
+                        </div>
+                    </div>
+                    <div id='urinediv' style='background-color: #ffffcc'>
+            Urine Output (mLs/day): <input type="text" name="urine" id="urine"><br>
+                    </div>
+                </div>
+            <button type="button" name='Calculate'>Calculate</button>        
+            <input type="reset" value="Clear">
+                </div>
+        </form>
+        <div id="line"></div>
+        <h2>Calculations</h2>
+        <p><strong>Growth (g/day):</strong> ((Current Weight - Previous Weight) * 1000g/Kg)/ Days Between Weights</p>
+        <p><strong>Calories Received (kcal/Kg/day):</strong> ((((BM/Formula #1 * kcals/oz #1) + (BM/Formula #2 * kcals/oz #2))/ 29.6 mLs/oz) + (D5 * 50g/1000mLs * 3.4 kcals/g))/ Dosing Kilograms</p>
+        <p><strong>Calories Required (kcals/day):</strong> Calorie Goal * Dosing Kilograms</p>
+        <p><strong>Fluids Received (mL/Kg/day):</strong> Total Inputs/ Dosing Kilograms</p>
+        <p><strong>Fluids Required: </strong> mLs/day = Fluid Goal * Dosing Kilograms,   mLs/shift = (mLs/day)/3,   mLs/q3h = (mLs/day)/8</p>
+        <p><strong>Urine Output (mL/Kg/hour):</strong> Urine Output/ Dosing Kilograms/ 24 Hours</p>
+    </body>
+</html>
