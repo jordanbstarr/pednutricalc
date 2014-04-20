@@ -1,3 +1,4 @@
+(document).ready(function(){  
 button[name=Calculate].on('click', function(){
        ('.answer').remove();
        ('#dosekgdivbr').remove();
@@ -29,4 +30,5 @@ button[name=Calculate].on('click', function(){
        ('#fluidgoaldiv').append("<div class='answer'>Fluids Required: mLs/day = "+fluidgoalresult.toFixed(3)+",   mLs/shift = "+fluidpershift.toFixed(3)+",   mLs/q3h = "+fluidper3.toFixed(3)+"</div>");
        ('#calgoaldiv').append("<div class='answer'>Calories Required (kcals/day) = "+caloriegoal.toFixed(3)+"</div>");
        ('#dosekgdiv').css({"height":"286px"}).prepend("<div id='dosekgdivbr'><br><br></div>");
+});
 });
